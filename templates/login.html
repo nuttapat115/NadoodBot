@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> LINE login</h1>
     <img id="pictureUrl">
     <p id ="displayName"><b>displayName:</b></p>
     <p id = "statusMessage"><b>stausMessage:</b></p>
@@ -17,11 +16,13 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
         async function main() {
-            await liff.init({liffId:"1656889718-KMoBB5el"})
+            await liff.init({liffId:"1656889718-KMoBB5el",withLoginOnExternalBrowser: true,})
             if (liff.isLoggedIn()) {
+                <h1> LINE login</h1>
                 getUserProfile()
             } else {
-                liff.login
+                console.log("Not login")
+                liff.login()
             }
         }
         main()
