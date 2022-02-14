@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1> LINE login</h1>
+    <img id="pictureUrl">
+    <p id ="displayName"><b>displayName:</b></p>
+    <p id = "stausMessage"><b>stausMessage:</b></p>
+    <button id ="btnLogOut" onclick="logOut()">Log out</button>
+
+
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
         async function main() {
@@ -22,7 +28,7 @@
         
         async function getUserProfile() {
             const profile = await liff.getProfile()
-            document.getElementById(pictureUrl).src = profile.pictureUrl
+            document.getElementById("pictureUrl").src = profile.pictureUrl
             document.getElementById("displayName").append(profile.displayName)
             document.getElementById("stausMessage").append(profile.stausMessage)
         }
