@@ -47,7 +47,7 @@ def handle_message(event):
     if text == '1':
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text),
+            TextSendMessage(text='https://liff.line.me/1656889718-KMoBB5el'),
             notification_disabled=True)
 
 
