@@ -7,15 +7,34 @@
     <title>Document</title>
 </head>
 <body>
+    <h1> LINE login</h1>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
-        liff.init({
-        liffId: '1656889718-KMoBB5el', // Use own liffId
-        withLoginOnExternalBrowser: true, // Enable automatic login process
-    }).then(() => {
-        // Start to use liff's api
-    });</script>
+        async function main() {
+            await liff.init({liffId:"1656889718-KMoBB5el"})
+            if (liff.isLoggedIn()) {
+                getUserProfile()
+            } else {
+                liff.login
+            }
+        }
+        main()
+        
+        async function getUserProfile() {
+            const profile = await liff.getProfile()
+            document.getElementById(pictureUrl).src = profile.pictureUrl
+            document.getElementById("displayName").append(profile.displayName)
+            document.getElementById("stausMessage").append(profile.stausMessage)
+        }
+
+        function logOut() {
+            liff.logOut()
+            window.location.reload()
+        }
+
+
     
-    <h1> LINE login</h1>
+    </script>
+
 </body>
 </html>
