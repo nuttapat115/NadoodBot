@@ -7,24 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> LINE login</h1>
-    <img id="pictureUrl">
-    <p id ="displayName"><b>displayName:</b></p>
-    <p id = "statusMessage"><b>statusMessage:</b></p>
-    <button id ="btnLogOut" onclick="logOut()">Log out</button>
+ 
 
 
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
-        async function main() {
-            await liff.init({liffId:"1656889718-KMoBB5el"})
-            if (liff.isLoggedIn()) {
-                getUserProfile()
-            } else {
-                liff.login
-            }
-        }
-        main()
+        liff.init({
+            liffId: '1234567890-AbcdEfgh', // Use own liffId
+            withLoginOnExternalBrowser: true, // Enable automatic login process
+        }).then(() => {
+            getUserProfile()
+        });
         
         async function getUserProfile() {
             const profile = await liff.getProfile()
@@ -38,9 +31,11 @@
             window.location.reload()
         }
 
-
-    
     </script>
-
+    <h1> LINE login</h1>
+    <img id="pictureUrl">
+    <p id ="displayName"><b>displayName:</b></p>
+    <p id = "statusMessage"><b>statusMessage:</b></p>
+    <button id ="btnLogOut" onclick="logOut()">Log out</button>
 </body>
 </html>
