@@ -18,7 +18,7 @@ line_bot_api = LineBotApi(
 handler = WebhookHandler('d81be6831b95489f999e3bb6e411cc90')
 
 
-@app.route("/test")
+@app.route("/liff")
 def test():
     return render_template("login.html")
 
