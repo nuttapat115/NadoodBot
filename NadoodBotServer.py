@@ -36,29 +36,15 @@ def webhook():
 
     return 'OK'
 
-
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text
-
     if text == '1':
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=event.message.text),
             notification_disabled=True)
-    elif text == '2':
-        line_bot_api.reply_message(
-            event.reply_token, 
-            StickerSendMessage(
-                package_id='1',
-                sticker_id='1'),
-            notification_disabled=True)
-    else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(
-                text='เป็นคำสั่งที่ยังไม่ได้สอนค่ะ'),
-            notification_disabled=True)
+
 
 
 if __name__ == "__main__":
