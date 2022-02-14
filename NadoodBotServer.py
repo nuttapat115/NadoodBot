@@ -1,5 +1,5 @@
 from traceback import print_tb
-from flask import Flask, request, abort
+from flask import Flask, request, abort ,render_template
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -20,7 +20,7 @@ handler = WebhookHandler('d81be6831b95489f999e3bb6e411cc90')
 
 @app.route("/test")
 def test():
-    return "<h1> Hello Test <h1>"
+    return render_template("login.html")
 
 
 @app.route("/webhook", methods=['POST'])
