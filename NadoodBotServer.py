@@ -44,7 +44,7 @@ def webhook():
 def handle_message(event):
     userid = event.source.user_id
     check_user_res = check_user(userid)
-    print(userid)
+    # print(userid)
     if check_user_res :
         text = event.message.text
         if text == '1':
@@ -55,7 +55,7 @@ def handle_message(event):
     else :
         line_bot_api.reply_message(
                 event.reply_token,
-                TextSendMessage(text='ท่านยังไม่ได้ลงทะเบียน กรุณากด "เริ่มต้นให้งาน" ที่เมนู'),
+                TextSendMessage(text='ท่านยังไม่ได้ลงทะเบียน \nกรุณากด "เริ่มต้นให้งาน" ที่เมนู'),
                 notification_disabled=True)
 
 def check_user (userid):
