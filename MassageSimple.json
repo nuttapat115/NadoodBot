@@ -1,20 +1,20 @@
-{   
-    'destination': 'U1c075f71a30ac36dd1f0372ebb80d1b2', 
-    'events': [
+{
+    "destination": "Ua1bd4fe8039de0f9243f15b7f3b7370b",
+    "events": [
         {
-            'type': 'message', 
-            'message': {
-                'type': 'text', 
-                'id': '15556064305426', 
-                'text': 'Hi'
-            }, 
-            'timestamp': 1644330200623, 
-            'source': {
-                'type': 'user', 
-                'userId': 'U1f8e69531520d7ba4dc7e93a6aca15a4'
-            }, 
-            'replyToken': '494787b0381041b0ae3fa10384581014', 
-            'mode': 'active'
+            "type": "message",
+            "message": {
+                "type": "text",
+                "id": "15620158991385",
+                "text": "Menu"
+            },
+            "timestamp": 1645340352405,
+            "source": {
+                "type": "user",
+                "userId": "U48e8d0d51b85e19f7bf21b48866a9c6f"
+            },
+            "replyToken": "7cd240b91ef942a196216bee902df0e7",
+            "mode": "active"
         }
     ]
 }
