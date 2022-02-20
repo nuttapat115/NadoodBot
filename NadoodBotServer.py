@@ -43,14 +43,24 @@ def webhook():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     userid = event.source.user_id
+    check_user_res = check_user(userid)
     print(userid)
-    text = event.message.text
-    if text == '1':
+    if check_user_res :
+        text = event.message.text
+        if text == '1':
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text='https://liff.line.me/1656889718-KMoBB5el'),
+                notification_disabled=True)
+    else :
         line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='https://liff.line.me/1656889718-KMoBB5el'),
-            notification_disabled=True)
+                event.reply_token,
+                TextSendMessage(text='ท่านยังไม่ได้ลงทะเบียน กรุณากด "เริ่มต้นให้งาน" ที่เมนู'),
+                notification_disabled=True)
 
+def check_user (userid):
+    return 0
+    
 
 
 if __name__ == "__main__":
