@@ -42,7 +42,7 @@ def webhook():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    userid = event.source.userId
+    userid = event.source.user_id
     print(userid)
     text = event.message.text
     if text == '1':
